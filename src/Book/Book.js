@@ -6,7 +6,7 @@ export class Book extends Component {
     return (
       <div className="book">
         <img src={this.props.image} className="image" alt="" />
-        <label>
+        <label className="text">
           Title:{this.props.title}
           <br />
           Author:{this.props.author}
