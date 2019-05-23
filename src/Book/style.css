@@ -4,6 +4,14 @@
   margin: auto;
   box-shadow: 2px 2px 2px 2px gray;
   border-radius: 15px;
+  background: red;
+}
+.books {
+  width: 1000px;
+  height: 350px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
 }
 .image {
   width: 100%;

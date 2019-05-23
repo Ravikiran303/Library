@@ -3,26 +3,31 @@ import "./style.css";
 
 export class Book extends Component {
   selectBook = props => {
-    console.log("selected Book " + this.props.title);
+    console.log("selected Book " + props.title);
   };
+  renderList() {
+    return this.props.list.map((book, index) => {
+      return (
+        <div className="book" key={index}>
+          <img
+            src={book.image}
+            alt=""
+            className="image"
+            onClick={this.selectBook}
+          />
+          <label>
+            {book.title}
+            <br />
+            {book.author}
+            <br />
+            {book.description}
+          </label>
+        </div>
+      );
+    });
+  }
   render() {
-    return (
-      <div className="book">
-        <img
-          src={this.props.image}
-          className="image"
-          alt=""
-          onClick={this.selectBook}
-        />
-        <label className="text">
-          Title:{this.props.title}
-          <br />
-          Author:{this.props.author}
-          <br />
-          Description:{this.props.description}
-        </label>
-      </div>
-    );
+    return <div className="books">{this.renderList()}</div>;
   }
 }
 
