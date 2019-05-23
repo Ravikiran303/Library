@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import "./style.css";
 
 export class Book extends Component {
-  selectBook() {
-    console.log("selected Book");
-  }
+  selectBook = props => {
+    console.log("selected Book " + this.props.title);
+  };
   render() {
     return (
       <div className="book">
