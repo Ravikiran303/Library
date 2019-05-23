@@ -5,13 +5,14 @@ export class Book extends Component {
   render() {
     return (
       <div className="book">
-        <img
-          src="https://images-na.ssl-images-amazon.com/images/I/91WJQeRImJL.jpg"
-          className="image"
-        />
-        <label>Title:</label>
-        <label>Author:</label>
-        <label>Description:</label>
+        <img src={this.props.image} className="image" alt="" />
+        <label>
+          Title:{this.props.title}
+          <br />
+          Author:{this.props.author}
+          <br />
+          Description:{this.props.description}
+        </label>
       </div>
     );
   }
