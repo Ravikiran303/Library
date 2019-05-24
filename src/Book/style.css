@@ -1,18 +1,18 @@
 .book {
-  width: 200px;
-  height: 300px;
+  width: 220px;
+  height: 380px;
   margin: auto;
-  box-shadow: 2px 2px 2px 2px gray;
-  border-radius: 15px;
-  background: red;
+  box-shadow: 1px 1px 6px 1px gray;
+  border-radius: 2px;
 }
 .image {
   width: 100%;
-  height: 70%;
-  border-radius: 15px;
+  height: 75%;
+  border-radius: 2px;
   cursor: pointer;
 }
-.text {
+.details {
   font-family: cursive;
-  margin: auto;
+  padding: 10px;
+  font-size: 14px;
 }
