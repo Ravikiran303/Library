@@ -42,13 +42,11 @@ export class Books extends Component {
     axios
       .get("/books")
       .then(response => {
-        // handle success
         const books_ = response.data;
         console.log(books_);
         this.setState({ books_ });
       })
       .catch(function(error) {
-        // handle error
         console.log(error);
       })
       .finally(function() {
