@@ -1,0 +1,7 @@
+.books {
+  width: 1200px;
+  height: 350px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+}

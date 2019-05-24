@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import Book from "../Book/Book";
 import "./style.css";
 
+import axios from "axios";
+
 export class Books extends Component {
-  state = {
-    book: [
+  state = { books_: [] };
+
+  state_ = {
+    books: [
       {
         image:
           "https://images-na.ssl-images-amazon.com/images/I/91WJQeRImJL.jpg",
@@ -34,11 +38,29 @@ export class Books extends Component {
       }
     ]
   };
-
+  componentDidMount = () => {
+    axios
+      .get("/books")
+      .then(response => {
+        // handle success
+        const books_ = response.data;
+        console.log(books_);
+        this.setState({ books_ });
+      })
+      .catch(function(error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function() {
+        // always executed
+      });
+  };
   render() {
     return (
       <div className="books">
-        <Book list={this.state.book} />
+        {this.state.books_.map((book, i) => (
+          <Book book={book} key={i} md={3} />
+        ))}
       </div>
     );
   }
