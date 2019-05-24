@@ -38,6 +38,7 @@ export class Books extends Component {
       }
     ]
   };
+
   componentDidMount = () => {
     axios
       .get("/books")
@@ -57,7 +58,7 @@ export class Books extends Component {
     return (
       <div className="books">
         {this.state.books_.map((book, i) => (
-          <Book book={book} key={i} md={3} />
+          <Book book={book} key={i} />
         ))}
       </div>
     );
