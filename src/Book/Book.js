@@ -1,21 +1,23 @@
 import React, { Component } from "react";
-
 import "./style.css";
+import { NavLink } from "react-router-dom";
 
 export class Book extends Component {
-  selectBook = props => {
-    console.log("selected Book " + this.props.book.title);
+  sendDetails = props => {
+    console.log(this.props.book);
   };
-
   render() {
     return (
       <div className="book">
-        <img
-          src={this.props.book.image}
-          alt=""
-          className="image"
-          onClick={this.selectBook}
-        />
+        <NavLink exact to="/BookDetails" details={this.props.book}>
+          <img
+            src={this.props.book.image}
+            alt=""
+            onClick={this.sendDetails}
+            className="image"
+          />
+        </NavLink>
+
         <label>
           {this.props.book.title}
           <br />
