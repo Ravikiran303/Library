@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./style.css";
+var ls = require("local-storage");
 
 export class Login extends Component {
   state = {
@@ -19,6 +20,7 @@ export class Login extends Component {
       .then(res => {
         console.log(res);
         if (!res.err) {
+          ls("email", this.state.email);
           this.props.history.push(`/books/${this.state.email}`);
         }
       })
