@@ -16,7 +16,7 @@ export class Register extends Component {
       password: this.state.password
     };
     axios
-      .post("/user/register", user)
+      .post("user/register", user)
       .then(res => {
         if (res.status === 200) {
           alert("Registration fsuccess");
